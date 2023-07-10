@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import dataContext from "../context/dataContext";
 
-export default function CategoryButton( {category, style} ) {
+export default function CategoryButton( {category, type} ) {
 
     var {getCategory} = useContext(dataContext);
 
 
-    const buttonStyle = (style) => {
-        switch (style) {
+    const buttonStyle = (type) => {
+        switch (type) {
             case 0:
                 return (
                     <div className="w-48 h-60 bg-sky-800 flex flex-col gap-3">
@@ -31,13 +31,15 @@ export default function CategoryButton( {category, style} ) {
                         <h1>{category.products.length}</h1>
                     </div>
                 )
+            default:
+                return null
 
         }
     }
 
     return (
         <Link to={"/categories"} onClick={() => {getCategory(category)}}>
-            {buttonStyle(style)}
+            {buttonStyle(type)}
         </Link>
       )
 }

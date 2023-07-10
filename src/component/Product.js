@@ -1,7 +1,10 @@
+import AddCartButton from "./AddCartButton"
+
 export default function Product( {product} ) {
   return (
     <div className="w-36 h-52 bg-sky-800 flex flex-col justify-center items-center shrink gap-3">
-        <div className="bg-sky-600 w-full h-4/5 flex justify-center items-center">
+        <div className="bg-sky-600 w-full h-4/5 flex justify-center items-center relative">
+            <AddCartButton item={product} />
             <img src={product.image}  alt="" width={80}/>
         </div>
         <div className="text-center">
