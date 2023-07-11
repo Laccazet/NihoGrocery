@@ -26,7 +26,7 @@ export default function Categories() {
           </div>
         </div>
 
-        <div className="bg-gray-800 w-[350px] h-[400px]">
+        <div className="bg-gray-800 w-[300px] h-[400px]">
           <LittleCart />
         </div>
 

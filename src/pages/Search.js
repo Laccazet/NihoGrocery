@@ -42,7 +42,7 @@ export default function Search() {
             </div>
   
             <div className="bg-sky-800 h-[830px] w-[350px] flex flex-col justify-between items-center">
-                <div className="bg-gray-400 w-full h-[400px]">
+                <div className="bg-gray-800 w-[300px] h-[400px]">
                     <LittleCart />
                 </div>
 

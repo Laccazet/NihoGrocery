@@ -24,9 +24,17 @@ html, body, #root {
 #App {
     height: 100%;
     width: 100%;
-    background-color: gray;
 }
 
 .Catagories {
     background-color: rgb(118, 111, 111);
+}
+
+.Cart {
+    background-color: #285738;
+}
+
+.LittleCart {
+    overflow-x: auto;
+    white-space: nowrap;
 }

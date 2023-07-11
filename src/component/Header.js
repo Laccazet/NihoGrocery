@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Header( {type} ) {
 
     var [input, setInput] = useState("");
-    var {search} = useContext(dataContext);
+    var {search, cart} = useContext(dataContext);
 
     const handleClick = () => {
         search(input);
@@ -22,7 +22,12 @@ export default function Header( {type} ) {
                         <button className="w-[50px] h-[30px] bg-slate-600">Search</button>
                     </Link>
                 </div>
-                <HeaderButton text={"Cart"} path={"/cart"} />
+                <div className="w-20 h-full flex flex-col justify-center items-center relative">
+                    <HeaderButton text={"Cart"} path={"/cart"} />
+                    <div className="w-5 h-5 rounded-full bg-red-600 absolute flex justify-center items-center bottom-2 right-2">
+                        <h1>{cart.length}</h1>
+                    </div>
+                </div>
                 <HeaderButton text={"About"} path={"/about"} />
             </div>
         </div>
