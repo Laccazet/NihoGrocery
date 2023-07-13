@@ -1,3 +1,18 @@
+# NihoGrocery
+NihoGrocery is a React e-commerce app.
+
+Tools I used:
+- Tailwind
+- React
+- React Icons
+- Framer Motion
+
+Screenshots
+- Desktop Version ![desktop-2](https://github.com/Laccazet/Frello-React/assets/43687373/6015851b-2d36-4fd0-b405-5bff7116f61c)
+- Mobile Version ![Mobile](https://github.com/Laccazet/Frello-React/assets/43687373/1bc8b844-20af-4dc2-9f84-2e94baa7671d)
+- Desktop Version ![desktop-1 ](https://github.com/Laccazet/Frello-React/assets/43687373/c86d7496-1fa4-4b70-95fc-ce3038523d6a)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

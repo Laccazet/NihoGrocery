@@ -2,6 +2,8 @@ import { useContext } from "react";
 import dataContext from "../context/dataContext";
 import CartItem from "./CartItem";
 import GoToCartButton from "./GoToCartButton";
+import { motion, AnimatePresence } from "framer-motion"
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 export default function LittleCart() {
 
@@ -10,22 +12,37 @@ export default function LittleCart() {
     const conRender = () => {
         if (cart.length > 0) {
            return (
-            <div className="w-full max-h-[250px]  flex flex-col gap-3 LittleCart">
-                {cart.map(item => <CartItem key={item.id} item={item} type={0} />)}
+            <div className="w-full h-[300px] bg-[#ebfaf8] rounded-2xl p-1 flex flex-col gap-3 LittleCart">
+                <AnimatePresence>
+                    {cart.map(item => {
+                        return (
+                            <motion.div
+                            key={item.id}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            >
+                                <CartItem key={item.id} item={item} type={0} />
+                            </motion.div>
+                        )})}
+                </AnimatePresence>
             </div>
            )
         } else {
-            return <h1>Add some item stupid.</h1>
+            return (
+                <div className="h-[200px] flex flex-col justify-center items-center gap-2">
+                    <BsFillCartPlusFill size={90} color="#2db9a6" />
+                    <h1 className="text-3xl">Cart is empty</h1>
+                    <h1 className="text-gray-500">Add some item to cart</h1>
+                </div>
+            )
         }
     }
 
 
     return (
-        <div className="w-full h-full">
-            <div className="w-full h-[100px] flex justify-center items-center">
-                <h1>Cart</h1>
-            </div>
-            <div className="w-full h-5/6 bg-slate-400 p-3 flex flex-col gap-3 justify-start items-center">
+        <div className="w-full h-full bg-white rounded-3xl border-2 border-[#2db9a6]">
+            <div className="w-full h-full p-3 flex flex-col gap-3 justify-start items-center">
                 {conRender()}
                 {cart.length > 0 ? <GoToCartButton /> : ""}
             </div>

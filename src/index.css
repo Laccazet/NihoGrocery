@@ -7,6 +7,10 @@ html, body, #root {
     margin: 0;
 }
 
+#root {
+    background-color: #fafafa;
+}
+
 *::-webkit-scrollbar {
     width: 10px;
 }
@@ -24,17 +28,37 @@ html, body, #root {
 #App {
     height: 100%;
     width: 100%;
+    color: #040101;
 }
 
-.Catagories {
-    background-color: rgb(118, 111, 111);
-}
-
-.Cart {
-    background-color: #285738;
+.MainPage, .Catagories, .Cart {
+    background-color: #f6f6f6;
 }
 
 .LittleCart {
     overflow-x: auto;
     white-space: nowrap;
+}
+
+.searchInput {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    font-size: 20px;
+    padding-left: 5px;
+    background: #f1f1f1;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    background-color: #46b3fc;
+    border-radius: 0 10px 10px 0;
 }

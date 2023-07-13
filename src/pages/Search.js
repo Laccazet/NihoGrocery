@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import dataContext from "../context/dataContext"
 import Header from "../component/Header";
-import CategoryButton from "../component/CategoryButton";
+import Footer from "../component/Footer";
 import Product from "../component/Product";
 import LittleCart from "../component/LittleCart";
+import { RxCross1 } from "react-icons/rx";
 
 export default function Search() {
 
@@ -21,8 +22,9 @@ export default function Search() {
               )
         }else {
             return (
-                <div>
-                    Not Found
+                <div className="w-full h-[700px] flex flex-col justify-center items-center">
+                    <RxCross1 size={130} color="#2db9a6" />
+                    <h1 className="text-xl md:text-3xl">The product can't found</h1>
                 </div>
             )
         }
@@ -37,22 +39,16 @@ export default function Search() {
   
         <div className="w-full h-full flex justify-center items-start gap-5 p-6">
   
-            <div className="bg-sky-600 w-[792px] min-h-[700px]">
+            <div className="bg-white rounded-3xl w-[348px] sm:w-[480px] md:w-[636px] xmd:w-[792px] min-h-[700px] shrink-0">
                 {conRender()}
             </div>
   
-            <div className="bg-sky-800 h-[830px] w-[350px] flex flex-col justify-between items-center">
-                <div className="bg-gray-800 w-[300px] h-[400px]">
-                    <LittleCart />
-                </div>
-
-                <div className="bg-slate-600 w-[250px] h-[400px] flex flex-col">
-                    <h1 className="text-center h-[50px]">Categories</h1>
-                    {categories.map(category => <CategoryButton key={category.id} category={category} type={1} />)}
-                </div>
+            <div className="hidden lg:flex w-[300px] h-[400px]">
+                <LittleCart />
             </div>
-  
         </div>
+
+        <Footer />
   
       </div>
     )

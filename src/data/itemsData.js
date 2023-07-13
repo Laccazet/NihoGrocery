@@ -12,7 +12,7 @@ const storeItems = [
                 price: 1.99,
                 gram: 500,
                 unit: "gr",
-                image: require("../assets/Items/Vegs/papper.webp"),
+                image: require("../assets/Items/Vegs/papper.png"),
             },
             {
                 id: uuidv4(),

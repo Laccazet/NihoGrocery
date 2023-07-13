@@ -22,25 +22,15 @@ export function ContextProvider( {children} ) {
         categories.map(category => {
             category.products.filter(item => {
                 if (input === "") {
-                    setSearchResult(prev => {
-                        return [...prev, item];
-                    })
-                } else if (item.name.toLowerCase().includes(input.toLowerCase())) {
-                    setSearchResult(prev => {
-                        return [...prev, item]
-                    })
-                } 
+                    setSearchResult(prev => [...prev, item])
+                } else if (item.name.toLowerCase().includes(input.toLowerCase())) setSearchResult(prev => [...prev, item]) 
             })
         })
     }
 
     const addCart = (product) => {
         let exist = cart.some(item => item.id === product.id)
-        if (!exist) {
-            setCart(prev => [...prev, {...product, quantity: 1}]);
-        } else {
-            increaseQuantity(product);
-        }
+        !exist ? setCart(prev => [...prev, {...product, quantity: 1}]) : increaseQuantity(product);
     }
 
     const deleteCartItem = (product) => {
@@ -52,11 +42,8 @@ export function ContextProvider( {children} ) {
     }
 
     const decreaseQuantity = (product) => {
-        if (product.quantity === 1) {
-            deleteCartItem(product);
-        } else {
-            setCart(cart.map(item => item.id === product.id ? {...item, quantity: item.quantity - 1} : item))
-        }
+        product.quantity === 1 ? deleteCartItem(product) 
+        : setCart(cart.map(item => item.id === product.id ? {...item, quantity: item.quantity - 1} : item))
     }
 
     useEffect(() => {
